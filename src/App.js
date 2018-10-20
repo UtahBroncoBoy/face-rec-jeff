@@ -63,7 +63,7 @@ class App extends Component {
 
   onSubmit = () => {
     this.setState({imageURL: this.state.input});
-      fetch('https://git.heroku.com/floating-dusk-47131.git/imageurl', {
+      fetch('https://floating-dusk-47131.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -73,7 +73,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if(response) {
-          fetch('https://git.heroku.com/floating-dusk-47131.git/image', {
+          fetch('https://floating-dusk-47131.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
