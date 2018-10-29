@@ -29,6 +29,7 @@ class App extends Component {
     this.state = initialState;
   }
 
+  // set state to retrieved user
   loadUser = (data) => {
     this.setState({user: {
       id: data.id,
@@ -40,6 +41,7 @@ class App extends Component {
     }})
   }
 
+  //calculate the placement of the box over a face
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box
     const image = document.getElementById('inputImage');
@@ -53,6 +55,7 @@ class App extends Component {
     }
   }
 
+  
   displayFaceBox = (box) => {
     this.setState({box: box});
   }
@@ -87,6 +90,7 @@ class App extends Component {
             .catch(console.log);
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
+        console.log(response);
       })
       .catch(err => console.log(`You have encountered an error!`, err));
   }
