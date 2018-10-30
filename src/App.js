@@ -53,15 +53,22 @@ class App extends Component {
     //   rightCol: imageWidth - (clarifaiFace.right_col * imageWidth),
     //   bottomRow: imageHeight - (clarifaiFace.bottom_row * imageHeight),
     // }
-    const clarifaiFaceArray = [];
+    const faceArray = [];
     const clarifaiFacesData = data.outputs[0].data.regions;
     const image = document.getElementById('inputImage');
     const imageWidth = Number(image.width);
     const imageHeight = Number(image.height);
 
-    clarifaiFacesData.forEach((face) => {
-      console.log(face);
+    faceArray = clarifaiFacesData.forEach((face) => {
+      const faceBoundingBox = face.region_info.bounding_box;
+      faceArray.push({
+        leftCol: faceBoundingBox.left_col * imageWidth,
+        topRow: faceBoundingBox.top_row,
+        rightCol: imageWidth - (faceBoundingBox.rightCol * imageWidth),
+        bottomRow: imageHeight - (faceBoundingBox.bottom_row * imageHeight)
+      })
     })
+    console.log(faceArray);
   }
 
   
