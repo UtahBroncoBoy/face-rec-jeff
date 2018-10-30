@@ -3,7 +3,6 @@ import './FaceRecognition.css';
 import BoundingBox from './BoundingBox';
 
 const FaceRecognition = ({ imageURL, boxes }) => {
-  console.log('boxes variable from FaceRecognition.js', boxes);
   return(
     <div className='center ma'>
       <div className='absolute mt2'>

@@ -43,16 +43,6 @@ class App extends Component {
 
   //calculate the placement of the box over a face
   calculateFaceLocation = (data) => {
-    // const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box
-    // const image = document.getElementById('inputImage');
-    // const imageWidth = Number(image.width);
-    // const imageHeight = Number(image.height);
-    // return {
-    //   leftCol: clarifaiFace.left_col * imageWidth,
-    //   topRow: clarifaiFace.top_row * imageHeight,
-    //   rightCol: imageWidth - (clarifaiFace.right_col * imageWidth),
-    //   bottomRow: imageHeight - (clarifaiFace.bottom_row * imageHeight),
-    // }
     let faceArray = [];
     const clarifaiFacesData = data.outputs[0].data.regions;
     const image = document.getElementById('inputImage');
