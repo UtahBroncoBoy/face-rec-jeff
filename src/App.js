@@ -63,7 +63,7 @@ class App extends Component {
       const faceBoundingBox = face.region_info.bounding_box;
       faceArray.push({
         leftCol: faceBoundingBox.left_col * imageWidth,
-        topRow: faceBoundingBox.top_row,
+        topRow: faceBoundingBox.top_row * imageHeight,
         rightCol: imageWidth - (faceBoundingBox.right_col * imageWidth),
         bottomRow: imageHeight - (faceBoundingBox.bottom_row * imageHeight)
       })
