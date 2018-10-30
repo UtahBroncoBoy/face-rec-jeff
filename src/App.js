@@ -11,7 +11,7 @@ import './App.css';
 const initialState = {
   input: '',
       imageURL: '',
-      box: {},
+      boxes: [],
       route: 'signin',
       isSignedIn: false,
       user: {
@@ -68,12 +68,12 @@ class App extends Component {
         bottomRow: imageHeight - (faceBoundingBox.bottom_row * imageHeight)
       })
     })
-    console.log(faceArray);
+    return faceArray;
   }
 
   
-  displayFaceBox = (box) => {
-    this.setState({box: box});
+  displayFaceBox = (boxes) => {
+    this.setState({boxes: boxes});
   }
 
   onInputChange = (event) => {
@@ -121,7 +121,7 @@ class App extends Component {
   }
 
   render() {
-    const{ isSignedIn, imageURL, route, box } = this.state;
+    const{ isSignedIn, imageURL, route, boxes } = this.state;
     return (
       <div className="App">
         <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
@@ -134,7 +134,7 @@ class App extends Component {
             onButtonSubmit={this.onSubmit}
           />
           <FaceRecognition 
-            box={box}
+            boxes={boxes}
             imageURL={imageURL}
           />
         </div>
