@@ -59,7 +59,7 @@ class App extends Component {
     const imageWidth = Number(image.width);
     const imageHeight = Number(image.height);
 
-    faceArray = clarifaiFacesData.forEach((face) => {
+    clarifaiFacesData.forEach((face) => {
       const faceBoundingBox = face.region_info.bounding_box;
       faceArray.push({
         leftCol: faceBoundingBox.left_col * imageWidth,
