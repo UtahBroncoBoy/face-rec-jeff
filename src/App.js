@@ -53,7 +53,7 @@ class App extends Component {
     //   rightCol: imageWidth - (clarifaiFace.right_col * imageWidth),
     //   bottomRow: imageHeight - (clarifaiFace.bottom_row * imageHeight),
     // }
-    const clarifaiFacesArray = data.outputs.data.regions;
+    const clarifaiFacesArray = data.outputs[0].data.regions;
     console.log(clarifaiFacesArray);
   }
 
