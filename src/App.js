@@ -64,7 +64,7 @@ class App extends Component {
       faceArray.push({
         leftCol: faceBoundingBox.left_col * imageWidth,
         topRow: faceBoundingBox.top_row,
-        rightCol: imageWidth - (faceBoundingBox.rightCol * imageWidth),
+        rightCol: imageWidth - (faceBoundingBox.right_col * imageWidth),
         bottomRow: imageHeight - (faceBoundingBox.bottom_row * imageHeight)
       })
     })
